@@ -1,0 +1,110 @@
+name: montesBelos
+description: "Venda de passagens rodoviárias."
+
+publish_to: 'none' 
+
+
+
+environment:
+  sdk: '>=3.4.0 <4.0.0'
+
+dependencies:
+  js: any
+  flutter:
+    sdk: flutter
+  flutter_web_plugins:
+    sdk: flutter
+  
+  flutter_modular: ^5.0.3
+  cupertino_icons: ^1.0.2
+  http: ^1.2.2
+  dartz: ^0.10.1
+  flutter_triple: ^1.2.7+4
+  get: ^4.6.5
+  awesome_snackbar_content: ^0.1.1
+  flutter_spinkit: ^5.2.0
+  url_launcher: ^6.1.10
+  google_sign_in: ^6.1.0
+  shared_preferences: ^2.1.1
+  mask_text_input_formatter: ^2.4.0
+  email_validator: '^2.1.16'
+  search_cep: ^4.0.2
+  flutter_login_facebook: ^1.8.0
+  credit_card_validator: ^2.1.0
+  google_fonts: ^6.2.1
+  carousel_slider: ^4.0.0
+  font_awesome_flutter: ^10.7.0
+  provider: ^6.1.2
+  firebase_core: ^3.6.0
+  firebase_auth: ^5.3.1
+  mailer: ^6.2.0
+  flutter_dash: ^1.0.0
+  flutter_multi_formatter: ^2.13.0
+  flutter_countdown_timer: ^4.1.0
+  efipay: ^1.0.6
+  lottie: ^3.1.3
+  webview_flutter_web: ^0.1.0+3
+  webview_flutter_platform_interface: ^1.9.5
+  webview_flutter: ^3.0.4
+  universal_html: ^2.2.4
+  flutter_svg: ^2.0.16
+  video_player: ^2.9.2
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+
+  flutter_lints: ^3.0.0
+
+
+flutter:
+  assets:
+    - assets/home/icon_home.png
+    - assets/home/onibus_home.png
+    - assets/home/arte_aplicativo_home.png
+    - assets/home/qr_code_home_app.png
+    - assets/home/logo_ti_sistema.png
+    - assets/home/logo_passagensbr.png
+    - assets/home/icon_google_store.png
+    - assets/home/icon_apple_store.png
+    - assets/servicos/video_jk.mp4
+
+    - assets/home/goiania.webp
+    - assets/home/gurupi.jpg
+    - assets/home/palmas.webp
+    - assets/home/porto_nacional.jpg
+    - assets/home/xinguara.jpg
+
+    - assets/viagem/onibus.png
+    - assets/viagem/onibus_mobile.png
+
+    - assets/viagem/nossa_frota_1.jpg
+    - assets/viagem/nossa_frota_2.jpg
+    - assets/viagem/nossa_frota_3.jpg
+    - assets/viagem/nossa_frota_4.jpg
+    - assets/viagem/nossa_frota_5.jpg
+    - assets/viagem/nossa_frota_6.jpg
+
+    - assets/servicos/city_tour.jpg
+    - assets/servicos/fretamento_continuo.jpg
+    - assets/servicos/fretamento_turistico.jpg
+    - assets/servicos/translado.jpg
+    - assets/servicos/transporte_de_artista.jpg
+    - assets/servicos/turismo_receptivo.jpg
+ 
+    - assets/viagem/como_comprar_1.png
+    - assets/viagem/bandeira_cartoes.png
+    - assets/home/icon_google.png
+    - assets/animation/sucesso.gif
+    - assets/como_comprar/pagamento_como_comprar.png
+    - assets/como_comprar/formulario_como_comprar.png
+    - assets/como_comprar/trechos_como_comprar.png
+    - assets/js/payment-token-efi-umd.min.js
+
+
+  
+  uses-material-design: true
+
+ 

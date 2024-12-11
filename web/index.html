@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="google-signin-client_id" content="579924578663-su6gemn0qmv0pd97cm0ic2ek42i4ts75.apps.googleusercontent.com">
+  <script type="text/javascript">
+    window.flutterWebRenderer = "html";
+  </script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+  <script src="assets/assets/js/payment-token-efi-umd.min.js" onload="console.log('Script payment-token-efi-umd.min.js carregado')" onerror="console.error('Falha ao carregar payment-token-efi-umd.min.js')"></script>
+
+
+  <script>
+    var paymentToken = '';
+    var brandT = '';
+
+    console.log(window.EfiPay);
+  
+    async function generatePaymentToken(account, brand, number, cvv, expirationMonth, expirationYear) {
+    try {
+       
+        window.paymentSuccess = null; 
+        const result = await EfiPay.CreditCard
+            .setAccount(account)
+            .setEnvironment('production')
+            .setCreditCardData({
+                brand: brand,
+                number: number,
+                cvv: cvv,
+                expirationMonth: expirationMonth,
+                expirationYear: expirationYear,
+                reuse: false
+            })
+            .getPaymentToken();
+
+        window.paymentToken = result.payment_token; 
+        window.paymentSuccess = true; 
+        return { success: true, payment_token: result.payment_token };
+    } catch (error) {
+        alert(`Código: ${error.code}\nErro: ${error.error}\nDescrição do erro: ${error.error_description}`);
+        window.paymentToken = null;
+        window.paymentSuccess = false;
+
+        return { 
+            success: false, 
+            code: error.code, 
+            message: error.error, 
+            description: error.error_description 
+        };
+    }
+}
+
+  </script>
+
+  <!--
+    If you are serving your web app in a path other than the root, change the
+    href value below to reflect the base path you are serving from.
+
+    The path provided below has to start and end with a slash "/" in order for
+    it to work correctly.
+
+    For more details:
+    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+
+    This is a placeholder for base href that will be replaced by the value of
+    the `--base-href` argument provided to `flutter build`.
+  -->
+  <base href="$FLUTTER_BASE_HREF">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="A new Flutter project.">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="montesBelos">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+  
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png"/>
+
+  <title>montesBelos</title>
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+  <script src="flutter_bootstrap.js" async></script>
+</body>
+</html>
